@@ -12,8 +12,10 @@
             </thead>
             <tbody>
                 <tr class="intro-x">
+                    @foreach ($product_brands as $brand)
                     <td class="w-40">
-                        <div class="flex">
+                        {{ $brand->id }}
+                        {{-- <div class="flex">
                             <div class="w-10 h-10 image-fit zoom-in">
                                 <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-9.jpg" title="Uploaded at 12 November 2022">
                             </div>
@@ -23,14 +25,14 @@
                             <div class="w-10 h-10 image-fit zoom-in -ml-5">
                                 <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-8.jpg" title="Uploaded at 12 November 2022">
                             </div>
-                        </div>
+                        </div> --}}
                     </td>
                     <td>
-                        <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a>
-                        <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Electronic</div>
+                        {{-- <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a> --}}
+                        <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5"> {{ $brand->brand_name }}</div>
                     </td>
                     <td class="w-40">
-                        <div class="flex items-center justify-center text-danger"> <i data-lucide="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
+                        <div class="flex items-center justify-center text-danger"> <i data-lucide="check-square" class="w-4 h-4 mr-2"></i>  {{ $brand->brand_status}} </div>
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
@@ -38,6 +40,7 @@
                             <a class="flex items-center text-danger" href="javascript:;" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                         </div>
                     </td>
+                    @endforeach
                 </tr>
             </tbody>
         </table>
