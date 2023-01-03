@@ -21,6 +21,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
         <!-- END: CSS Assets-->
+
+        @livewireStyles
     </head>
     <!-- END: Head -->
     <body class="py-5">
@@ -177,12 +179,16 @@ License: You must have a valid license purchased only from themeforest(the above
         {{-- <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script> --}}
         <script src="{{ asset('dist/js/app.js') }}"></script>
         <script src="{{ asset('dist/js/ckeditor-classic.js') }}"></script>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
 =======
         @stack('script')
         @livewireScripts
 >>>>>>> Stashed changes
+=======
+        @livewireScripts
+>>>>>>> 90ea9537cfc1abd7c9c823eca288f82bca43821f
         <!-- END: JS Assets-->
     </body>
 </html>
