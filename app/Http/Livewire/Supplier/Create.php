@@ -23,7 +23,7 @@ class Create extends Component
             'supplier_contact_no'      =>      $this->supplier_contact_no,
         ]);
 
-        return redirect()->to('brand');
+        return redirect()->to('supplier');
     }
 
     public function render()

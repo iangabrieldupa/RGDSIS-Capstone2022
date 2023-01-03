@@ -21,9 +21,14 @@ class BrandController extends Controller
         // return view('brand.create');
     }
 
-    public function edit()
+    public function destroy()
     {
-        // return view('brand.create');
+        // return view('brand.delete');
+    }
+
+    public function edit($id)
+    {
+        return view('brand.edit', compact('id'));
     }
 
     public function update()

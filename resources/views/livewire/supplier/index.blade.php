@@ -1,6 +1,7 @@
 <div>
+    {{-- @include('livewire.supplier.delete') --}}
     <!-- BEGIN: Data List -->
-    <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+    {{-- <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
         <table class="table table-report -mt-2">
             <thead>
                 <tr>
@@ -37,6 +38,48 @@
                         </div>
                     </td>
                 </tr>
+            </tbody>
+        </table>
+    </div> --}}
+    <!-- END: Data List -->
+    <!-- BEGIN: Data List -->
+    <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+        <a href="{{ url('supplier/create') }}" class="btn btn-primary float-end">Add New Supplier</a>
+        <table class="table table-report -mt-2">
+            <thead>
+                <tr>
+                    <th class="whitespace-nowrap">ID</th>
+                    <th class="whitespace-nowrap">SUPPLIER NAME</th>
+                    <th class="whitespace-nowrap">SUPPLIER ADDRESS</th>
+                    <th class="whitespace-nowrap">SUPPLIER CONTACT NO.</th>
+                    <th class="text-center whitespace-nowrap">ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($suppliers as $supplier)
+                <tr class="intro-x">
+
+                    <td class="w-40">
+                        {{ $supplier->id }}
+                    </td>
+                    <td>
+                        {{ $supplier->supplier_name }}
+                    </td>
+                    <td>
+                        {{ $supplier->supplier_address }}
+                    </td>
+                    <td>
+                        {{ $supplier->supplier_contact_no }}
+                    </td>
+                    <td class="table-report__action w-56">
+                        <div class="flex justify-center items-center">
+                            <a href="{{ url('supplier/'.$supplier->id.'/edit') }}" class="flex items-center mr-3 text-success" href="javascript:;"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                            {{-- <a class="flex items-center text-danger" href="#" wire:click="deleteSupplier({{ $supplier->id }})" data-tw-toggle="modal" data-tw-target="#deleteSupplierModal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a> --}}
+                        </div>
+                    </td>
+
+                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

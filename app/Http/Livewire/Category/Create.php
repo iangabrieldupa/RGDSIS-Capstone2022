@@ -18,7 +18,7 @@ class Create extends Component
 
         Category::create([
             'category_name'      =>      $this->category_name,
-            'category_status'    =>      $this->category_status,
+            'category_status'    =>      $this->category_status == true ? '0': '1',
         ]);
 
         return redirect()->to('category');

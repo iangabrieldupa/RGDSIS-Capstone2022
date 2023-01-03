@@ -21,9 +21,9 @@ class CategoryController extends Controller
         // return view('category.create');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        // return view('category.create');
+        return view('category.edit', compact('id'));
     }
 
     public function update()

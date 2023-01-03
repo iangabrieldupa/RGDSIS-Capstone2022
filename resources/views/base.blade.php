@@ -17,7 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
         <meta name="keywords" content="admin template, Midone Admin Template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="LEFT4CODE">
-        <title>Dashboard - Midone - Tailwind HTML Admin Template</title>
+        <title>RGD</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
         <!-- END: CSS Assets-->
@@ -54,15 +54,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </a>
                 <div class="side-nav__devider my-6"></div>
                 <ul>
-                    <li>
-                        <a href="javascript:;.html" class="side-menu">
-                            <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
-                            <div class="side-menu__title">
-                                Dashboard
-                            </div>
-                        </a>
-                    </li>
-                    <li>
+                    {{-- <li>
                         <a href="javascript:;" class="side-menu">
                             <div class="side-menu__icon"> <i data-lucide="box"></i> </div>
                             <div class="side-menu__title">
@@ -88,16 +80,15 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
                                     <div class="side-menu__title"> Product Unit </div>
                                 </a>
-                            </li>
-                            <li>
+                            </li> --}}
+                            {{-- <li>
                                 <a href="/supplier" class="side-menu">
                                     <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
                                     <div class="side-menu__title"> Supplier </div>
                                 </a>
-                            </li>
-                        </ul>
-                    </li>
-
+                            </li> --}}
+                        {{-- </ul>
+                    </li> --}}
                     <li>
                         <a href="/product" class="side-menu">
                             <div class="side-menu__icon"> <i data-lucide="inbox"></i> </div>
@@ -105,13 +96,32 @@ License: You must have a valid license purchased only from themeforest(the above
                         </a>
                     </li>
                     <li>
+                        <a href="/brand" class="side-menu">
+                            <div class="side-menu__icon"> <i data-lucide="inbox"></i> </div>
+                            <div class="side-menu__title"> Product Brands </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/category" class="side-menu">
+                            <div class="side-menu__icon"> <i data-lucide="inbox"></i> </div>
+                            <div class="side-menu__title"> Product Category </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/unit" class="side-menu">
+                            <div class="side-menu__icon"> <i data-lucide="inbox"></i> </div>
+                            <div class="side-menu__title"> Product Unit </div>
+                        </a>
+                    </li>
+
+                    {{-- <li>
                         <a href="side-menu-light-file-manager.html" class="side-menu">
                             <div class="side-menu__icon"> <i data-lucide="hard-drive"></i> </div>
                             <div class="side-menu__title"> Reports </div>
                         </a>
-                    </li>
+                    </li> --}}
                     <li>
-                        <a href="side-menu-light-point-of-sale.html" class="side-menu">
+                        <a href="/invoice" class="side-menu">
                             <div class="side-menu__icon"> <i data-lucide="credit-card"></i> </div>
                             <div class="side-menu__title"> Invoice Data Entry </div>
                         </a>
@@ -127,8 +137,8 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- BEGIN: Breadcrumb -->
                     <nav aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Application</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            <li class="breadcrumb-item"><a href="#">RGD</a></li>
+                            {{-- <li class="breadcrumb-item active" aria-current="page">Dashboard</li> --}}
                         </ol>
                     </nav>
                     <!-- END: Breadcrumb -->
@@ -147,7 +157,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <hr class="dropdown-divider border-white/[0.08]">
                                 </li>
                                 <li>
-                                    <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="toggle-right" class="w-4 h-4 mr-2"></i> Logout </a>
+                                    <a href="/login" class="dropdown-item hover:bg-white/5"> <i data-lucide="toggle-right" class="w-4 h-4 mr-2"></i> Logout </a>
                                 </li>
                             </ul>
                         </div>
@@ -167,7 +177,12 @@ License: You must have a valid license purchased only from themeforest(the above
         {{-- <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script> --}}
         <script src="{{ asset('dist/js/app.js') }}"></script>
         <script src="{{ asset('dist/js/ckeditor-classic.js') }}"></script>
+<<<<<<< Updated upstream
 
+=======
+        @stack('script')
+        @livewireScripts
+>>>>>>> Stashed changes
         <!-- END: JS Assets-->
     </body>
 </html>

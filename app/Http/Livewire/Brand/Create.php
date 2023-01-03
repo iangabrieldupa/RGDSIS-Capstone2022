@@ -19,7 +19,7 @@ class Create extends Component
 
         Brand::create([
             'brand_name'      =>      $this->brand_name,
-            'brand_status'    =>      $this->brand_status,
+            'brand_status'    =>      $this->brand_status == true ? '0': '1',
         ]);
 
         return redirect()->to('brand');

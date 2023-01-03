@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Unit;
+use App\Models\Brand;
+use App\Models\Invoice;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -13,15 +17,15 @@ class Product extends Model
 
     protected $fillable = [
         'product_name',
-        'sku',
+        // 'sku',
         'product_unit_price',
         'quantity',
-        'product_image',
+        // 'product_image',
         'product_description',
         'brand_id',
         'category_id',
         'unit_id',
-        'vat_type',
+        // 'vat_type',
     ];
 
     public function brands(){
@@ -36,7 +40,7 @@ class Product extends Model
         return $this->belongsTo(Unit::class, 'unit_id', 'id');
     }
 
-    public function orders(){
-        return $this->belongsTo(Order::class, 'product_id', 'id');
+    public function invoices(){
+        return $this->belongsTo(Invoice::class, 'product_id', 'id');
     }
 }

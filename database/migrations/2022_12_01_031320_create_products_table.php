@@ -18,12 +18,12 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->decimal('product_unit_price', 8,2);
             $table->string('quantity');
-            $table->string('product_image')->nullable();
+            // $table->string('product_image')->nullable();
             $table->string('product_description')->nullable();
-            $table->bigInteger('brand_id')->unsigned();
-            $table->bigInteger('category_id')->unsigned();
-            $table->bigInteger('unit_id')->unsigned();
-            $table->string('vat_type')->nullable();
+            $table->bigInteger('brand_id')->unsigned()->nullable();
+            $table->bigInteger('category_id')->unsigned()->nullable();
+            $table->bigInteger('unit_id')->unsigned()->nullable();
+            // $table->string('vat_type')->nullable();
 
             $table->foreign('brand_id')->references('id')->on('product_brands')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('product_categories')->onDelete('cascade');

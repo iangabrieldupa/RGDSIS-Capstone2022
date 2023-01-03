@@ -1,6 +1,8 @@
 <div>
+    {{-- @include('livewire.category.delete') --}}
     <!-- BEGIN: Data List -->
     <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+        <a href="{{ url('category/create') }}" class="btn btn-primary float-end">Add New Category</a>
         <table class="table table-report -mt-2">
             <thead>
                 <tr>
@@ -11,36 +13,39 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($product_categories as $category)
                 <tr class="intro-x">
+
                     <td class="w-40">
-                        <div class="flex">
-                            <div class="w-10 h-10 image-fit zoom-in">
-                                <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-9.jpg" title="Uploaded at 12 November 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-3.jpg" title="Uploaded at 12 November 2022">
-                            </div>
-                            <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-8.jpg" title="Uploaded at 12 November 2022">
-                            </div>
-                        </div>
+                        {{ $category->id }}
                     </td>
                     <td>
-                        <a href="" class="font-medium whitespace-nowrap">Sony Master Series A9G</a>
-                        <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Electronic</div>
+                        {{ $category->category_name }}
                     </td>
                     <td class="w-40">
-                        <div class="flex items-center justify-center text-danger"> <i data-lucide="check-square" class="w-4 h-4 mr-2"></i> Inactive </div>
+                        <div class="flex items-center justify-center">{{ $category->category_status == '1' ? 'Visible':'Hidden'}} </div>
                     </td>
                     <td class="table-report__action w-56">
                         <div class="flex justify-center items-center">
-                            <a class="flex items-center mr-3" href="javascript:;"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                            <a class="flex items-center text-danger" href="javascript:;" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                            <a href="{{ url('category/'.$category->id.'/edit') }}" class="flex items-center mr-3 text-success" href="javascript:;"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                            {{-- <a class="flex items-center text-danger" href="#" wire:click="deleteCategory({{ $category->id }})" data-tw-toggle="modal" data-tw-target="#deleteCategoryModal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a> --}}
                         </div>
                     </td>
+
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
     <!-- END: Data List -->
+    @push('script')
+
+    <script>
+        window.addEventListener('close-modal', event=> {
+
+            $('#deleteModal').modal('hide');
+        });
+    </script>
+
+    @endpush
 </div>

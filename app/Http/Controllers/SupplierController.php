@@ -21,9 +21,9 @@ class SupplierController extends Controller
         // return view('supplier.create');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        // return view('supplier.create');
+        return view('supplier.edit', compact('id'));
     }
 
     public function update()

@@ -2,5 +2,5 @@
 
 @section('content')
 
-    Hello
+
 @endsection

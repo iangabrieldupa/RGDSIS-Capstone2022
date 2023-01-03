@@ -21,9 +21,9 @@ class UnitController extends Controller
         // return view('unit.create');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        // return view('unit.create');
+        return view('unit.edit', compact('id'));
     }
 
     public function update()

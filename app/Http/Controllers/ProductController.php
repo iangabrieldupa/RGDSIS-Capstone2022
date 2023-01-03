@@ -21,9 +21,9 @@ class ProductController extends Controller
         // return view('product.create');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        // return view('product.create');
+        return view('product.edit', compact('id'));
     }
 
     public function update()
